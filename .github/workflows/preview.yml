@@ -45,7 +45,7 @@ jobs:
         with:
           node-version: "20"
           cache: yarn
-          cache-dependancy-path: website/yarn.lock
+          cache-dependency-path: website/yarn.lock
       - name: Setup Pages
         uses: actions/configure-pages@v5
         # with:
@@ -57,7 +57,7 @@ jobs:
       - name: Restore cache
         uses: actions/cache@v4
         with:
-          cache-dependancy-path: website/yarn.lock
+          cache-dependency-path: website/yarn.lock
           path: |
             dist
             .nuxt
