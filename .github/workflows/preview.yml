@@ -43,10 +43,6 @@ jobs:
         id: detect-package-manager
         run: yarn install
         working-directory: website
-      - name: List files
-        id: list-files-in-folder
-        run: ls -la
-        working-directory: website
       - name: Setup Node
         uses: actions/setup-node@v4
         with:
