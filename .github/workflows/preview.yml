@@ -57,7 +57,6 @@ jobs:
       - name: Restore cache
         uses: actions/cache@v4
         with:
-          cache-dependency-path: website/yarn.lock
           path: |
             dist
             .nuxt
