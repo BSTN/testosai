@@ -33,19 +33,20 @@ jobs:
     runs-on: ubuntu-latest
     defaults:
       run:
-        working-directory: website
+        working-directory: ./website
     steps:
       - name: Checkout
         uses: actions/checkout@v4
       - name: Detect package manager
         id: detect-package-manager
         run: yarn install
+        working-directory: ./website
       - name: Setup Node
         uses: actions/setup-node@v4
         with:
           node-version: "20"
           cache: yarn
-          cache-dependency-path: website/yarn.lock
+          cache-dependency-path: ./website/yarn.lock
       - name: Setup Pages
         uses: actions/configure-pages@v5
         # with:
@@ -67,7 +68,7 @@ jobs:
         run: yarn ${{ steps.detect-package-manager.outputs.command }}
       - name: Static HTML export with Nuxt
         run: yarn run generate
-        working-directory: website
+        working-directory: ./website
         env: 
           githubtoken: ${{ secrets.GITHUB_TOKEN }}
           NUXT_APP_BASE_URL: /
