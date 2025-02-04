@@ -67,13 +67,14 @@ jobs:
         run: yarn ${{ steps.detect-package-manager.outputs.command }}
       - name: Static HTML export with Nuxt
         run: yarn run generate
+        working-directory: website
         env: 
           githubtoken: ${{ secrets.GITHUB_TOKEN }}
           NUXT_APP_BASE_URL: /
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: ./dist
+          path: ./website/dist
 
   # Deployment job
   deploy:
