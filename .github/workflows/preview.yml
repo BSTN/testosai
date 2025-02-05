@@ -39,6 +39,8 @@ jobs:
         uses: actions/checkout@v4
         with: 
           submodules: 'true'
+      - name: CHECK FILES
+        run: ls -la
       - name: Detect package manager
         id: detect-package-manager
         run: yarn install
