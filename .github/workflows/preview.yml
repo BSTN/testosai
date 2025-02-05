@@ -27,6 +27,9 @@ concurrency:
   group: "pages"
   cancel-in-progress: false
 
+env:
+  BASE_URL: '/testosai/'
+
 jobs:
   # Build job
   build:
@@ -39,6 +42,11 @@ jobs:
         uses: actions/checkout@v4
         with: 
           submodules: 'true'
+      - name: Update Git Submodules
+        working-directory: ../
+        run: |
+          git submodule update --init --recursive
+          git submodule update --remote
       - name: CHECK FILES
         run: ls -la
       - name: Detect package manager
