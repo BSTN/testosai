@@ -44,7 +44,7 @@ jobs:
           submodules: 'recursive'
       - name: Update submodules
         run: |
-          git submodule update --init --recursive
+          git submodule update --init
           git submodule update --remote
         working-directory: './'
       - name: Detect package manager
