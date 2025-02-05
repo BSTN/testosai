@@ -27,6 +27,9 @@ concurrency:
   group: "pages"
   cancel-in-progress: false
 
+env:
+  NUXT_APP_BASE_URL: /testosai/
+
 jobs:
   # Build job
   build:
@@ -70,7 +73,6 @@ jobs:
         working-directory: website
         env: 
           githubtoken: ${{ secrets.GITHUB_TOKEN }}
-          NUXT_APP_BASE_URL: /testosai/
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
