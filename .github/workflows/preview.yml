@@ -43,7 +43,7 @@ jobs:
         with: 
           submodules: 'true'
       - name: Update Git Submodules
-        working-directory: ./
+        working-directory: ./../
         run: |
           git submodule update --init --recursive
           git submodule update --remote
