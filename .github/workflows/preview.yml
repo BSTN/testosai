@@ -1,8 +1,4 @@
-# Sample workflow for building and deploying a Nuxt site to GitHub Pages
-#
-# To get started with Nuxt see: https://nuxtjs.org/docs/get-started/installation
-#
-name: Deploy Nuxt site to Pages
+name: Preview workflow
 
 on:
   # Runs on pushes targeting the default branch
@@ -46,6 +42,10 @@ jobs:
         run: |
           git submodule update --init --remote
         working-directory: './'
+      - name: download github modules
+        run: |
+          git clone https://github.com/Language-Technology-Assessment/main-database.git ./repos/data
+          git clone https://github.com/Language-Technology-Assessment/European-open-AI-index.git ./repos/website
       - name: Detect package manager
         id: detect-package-manager
         run: yarn install
