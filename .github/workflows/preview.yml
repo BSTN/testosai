@@ -45,6 +45,7 @@ jobs:
       - name: Update submodules
         run: |
           git submodule update --remote --recursive
+        working-directory: './../'
       - name: Detect package manager
         id: detect-package-manager
         run: yarn install
