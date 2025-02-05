@@ -44,11 +44,11 @@ jobs:
           submodules: 'recursive'
       - name: LIST PARENT WORKING DIR
         run: ls -la
-        working-directory: './../'
+        working-directory: './'
       - name: Update submodules
         run: |
           git submodule update --remote --recursive
-        working-directory: './../'
+        working-directory: './'
       - name: Detect package manager
         id: detect-package-manager
         run: yarn install
