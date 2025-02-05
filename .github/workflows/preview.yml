@@ -41,12 +41,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
         with: 
-          submodules: 'true'
-      - name: Update Git Submodules
-        working-directory: ./../
-        run: |
-          git submodule update --init --recursive
-          git submodule update --remote
+          submodules: 'recursive'
       - name: CHECK FILES
         run: ls -la
       - name: Detect package manager
