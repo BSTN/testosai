@@ -36,16 +36,18 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
-        with: 
-          submodules: 'false'
-      - name: Update submodules
-        run: |
-          git submodule update --init --remote
-        working-directory: './'
+        # with: 
+        #   submodules: 'false'
+      # - name: Update submodules
+      #   run: |
+      #     git submodule update --init --remote
+      #   working-directory: './'
       - name: download github modules
         run: |
-          git clone https://github.com/Language-Technology-Assessment/main-database.git ./repos/data
-          git clone https://github.com/Language-Technology-Assessment/European-open-AI-index.git ./repos/website
+          git clone https://github.com/Language-Technology-Assessment/main-database.git ./website
+          git clone https://github.com/Language-Technology-Assessment/main-database.git ./website/repos/data
+          git clone https://github.com/Language-Technology-Assessment/European-open-AI-index.git ./website/repos/website
+        working-directory: './'
       - name: Detect package manager
         id: detect-package-manager
         run: yarn install
