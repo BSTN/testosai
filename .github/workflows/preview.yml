@@ -44,7 +44,7 @@ jobs:
       #   working-directory: './'
       - name: download github modules
         run: |
-          git clone https://github.com/Language-Technology-Assessment/main-database.git ./website
+          git clone -b dev https://github.com/Language-Technology-Assessment/website.git ./website
           git clone https://github.com/Language-Technology-Assessment/main-database.git ./website/repos/data
           git clone https://github.com/Language-Technology-Assessment/European-open-AI-index.git ./website/repos/website
         working-directory: './'
